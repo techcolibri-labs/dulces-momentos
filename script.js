@@ -116,9 +116,11 @@ function initHeroAnimations() {
 }
 
 // Fade Ups generales on Scroll
+const isMobile = window.innerWidth <= 768;
+
 gsap.utils.toArray('.gs-fade-up').forEach(element => {
   gsap.fromTo(element, 
-    { opacity: 0, y: 50 },
+    { opacity: 0, y: isMobile ? 30 : 50 },
     {
       opacity: 1,
       y: 0,
@@ -126,12 +128,16 @@ gsap.utils.toArray('.gs-fade-up').forEach(element => {
       ease: "power3.out",
       scrollTrigger: {
         trigger: element,
-        start: "top 85%", // Cuando el top del elemento llegue al 85% de la ventana
+        start: isMobile ? "top 98%" : "top 85%", // Dispara mucho antes en celular
         toggleActions: "play none none reverse"
       }
     }
   );
 });
+
+// Forzar refresco de GSAP en celulares
+window.addEventListener('resize', () => ScrollTrigger.refresh());
+window.addEventListener('load', () => ScrollTrigger.refresh());
 
 // Parallax Images (Nosotros y Galeria)
 gsap.utils.toArray('.gs-parallax-img').forEach(img => {
