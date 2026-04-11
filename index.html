@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulces Momentos | Experiencias Dulces de Lujo</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Capa de Textura de Lujo (Ruido/Grano) -->
+  <div class="noise-overlay"></div>
+
+  <!-- Cursor Magnético Personalizado -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+
+  <!-- PANTALLA DE CARGA -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader-brand">Dulces <span>Momentos</span></div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo hover-target">
+      Dulces<span>Momentos</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#nosotros" class="hover-target">Filosofía</a></li>
+      <li><a href="#experiencia" class="hover-target">La Magia</a></li>
+      <li><a href="#paquetes" class="hover-target">Selección</a></li>
+      <li><a href="#galeria" class="hover-target">Galería</a></li>
+      <li><a href="#contacto" class="btn btn-secondary hover-target">Agendar Asesoría</a></li>
+    </ul>
+    <!-- Hamburger for mobile -->
+    <div class="nav-burger hover-target" onclick="toggleNav()" style="z-index: 1001;">
+      <span style="background:var(--accent);"></span>
+      <span style="background:var(--accent);"></span>
+      <span style="background:var(--accent);"></span>
+    </div>
+  </nav>
+
+  <!-- HERO (FULL SCREEN CINEMATIC) -->
+  <section id="inicio" class="hero gs-reveal">
+    <div class="hero-video-wrap">
+      <!-- Se utiliza una imagen ultra fina parallax en lugar de video estricto para asegurar fluidez y elegancia perfecta -->
+      <img src="img/img5.png" class="parallax-hero" alt="Evento Premium">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge"><span class="gs-title-word">Alta</span> <span class="gs-title-word">Repostería</span>
+        <span class="gs-title-word">Nupcial</span> <span class="gs-title-word">&</span> <span
+          class="gs-title-word">Eventos</span>
+      </div>
+      <h1 id="hero-title" class="serif">Diseño sofisticado,<br>sabores inolvidables.</h1>
+
+      <div class="hero-btns" id="hero-actions">
+        <a href="#paquetes" class="btn btn-primary hover-target">Descubrir Selección</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Descubrir</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS (STYLISH PARALLAX BLOCK) -->
+  <section id="nosotros">
+    <div class="section-inner">
+      <span class="watermark">01</span>
+      <div class="about-layout">
+        <div class="about-img-wrap gs-img-wrap">
+          <!-- Image scales and shifts slightly via GSAP -->
+          <img class="gs-parallax-img" src="img/img1.png" alt="Detalle de Macarons">
+        </div>
+        <div class="about-content">
+          <h2 class="section-title gs-fade-up" style="text-align: left; margin-bottom: 2rem;">Acerca de Nuestro Arte
+          </h2>
+          <p class="gs-fade-up">
+            Más que una barra de postres, concebimos obras de arte comestibles. Nuestro acercamiento
+            combina la estética minimalista europea con la riqueza de sabores que dictan las nuevas
+            tendencias gastronómicas.
+          </p>
+          <p class="gs-fade-up">
+            Cada evento es tratado como una pasarela única, un lienzo en el que seleccionamos los
+            ingredientes y estructuras más exquisitas para deslumbrar tanto al paladar como a la óptica
+            de tus invitados.
+          </p>
+          <div class="gs-fade-up" style="margin-top: 3rem;">
+            <a href="#galeria" class="btn btn-primary hover-target">Explorar Galería</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA MAGIA (EXPERIENCE BEFORE / AFTER SLIDER) -->
+  <section id="experiencia">
+    <div class="section-inner" style="padding-top: 80px; padding-bottom: 80px;">
+      <span class="watermark">02</span>
+      <div class="ornament-line gs-fade-up"></div>
+      <h2 class="section-title gs-fade-up">La Magia de la Transformación</h2>
+      <p class="section-sub gs-fade-up" style="color: rgba(251, 250, 248, 0.6);">
+        Desliza para presenciar cómo intervenimos un espacio vacío y lo transformamos en el foco absoluto de atención de
+        tu evento.
+      </p>
+
+      <div class="slider-container gs-fade-up hover-target" id="slider-container">
+        <!-- Imagen de "Después" (Mesa Espectacular) -->
+        <img class="slider-img img-after" src="img/img3.png" alt="Mesa terminada">
+
+        <!-- Imagen de "Antes" (Mesa/Sala Vacía o sencilla) -->
+        <!-- NOTA PARA EL CLIENTE: Aquí pondrás tu foto "Antes". Uso una genérica por ahora -->
+        <img class="slider-img img-before" id="slider-before" src="img/img2.png" alt="Mesa antes">
+
+        <!-- Slider Handler -->
+        <div class="slider-handle" id="slider-handle">
+          <div class="slider-handle-circle">↔</div>
+        </div>
+
+        <!-- Touch / Drag Overlay -->
+        <div class="slider-overlay-area" id="slider-overlay"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAQUETES DE LUJO -->
+  <section id="paquetes">
+    <div class="section-inner">
+      <span class="watermark">03</span>
+      <div class="ornament-line gs-fade-up"></div>
+      <h2 class="section-title gs-fade-up">Nuestra Colección Privada</h2>
+      <p class="section-sub gs-fade-up" style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem; color: var(--accent);">"La delicia en tu fiesta"</p>
+
+      <div class="paquetes-grid">
+        <!-- CARD 1 -->
+        <div class="pkg-card hover-target gs-fade-up">
+          <div class="pkg-img">
+            <img src="img/img1.png" alt="Gala">
+          </div>
+          <div class="pkg-content">
+            <h3 class="pkg-name">Paquete 1</h3>
+            <div class="pkg-price">$45 MXN <span style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/ por persona</span></div>
+            <ul class="pkg-list">
+              <li>Gelatina con crema</li>
+              <li>Arroz con leche y Manzanas con crema</li>
+              <li>Pay de limón</li>
+              <li>Fuente de chocolate con brochetas (uva, fresa, bombón)</li>
+              <li>Botanas surtidas (cacahuates, habas, etc.)</li>
+              <li>Palomitas, frituras y gran variedad de dulces</li>
+              <li>Pepino, zanahoria y jícama</li>
+            </ul>
+            <a href="#contacto" class="btn btn-primary hover-target pkg-cta">Consultar Fecha</a>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="pkg-card hover-target gs-fade-up">
+          <div class="pkg-img">
+            <img src="img/img4.png" alt="Clásico">
+          </div>
+          <div class="pkg-content">
+            <h3 class="pkg-name">Paquete 2</h3>
+            <div class="pkg-price">$40 MXN <span style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/ por persona</span></div>
+            <ul class="pkg-list">
+              <li>Fuente de chocolate con brochetas (uva, fresa, bombón)</li>
+              <li>Botanas surtidas (cacahuates, habas, hot nut, etc.)</li>
+              <li>Palomitas y frituras</li>
+              <li>Gran variedad de dulces</li>
+              <li>Pepino, zanahoria y jícama</li>
+            </ul>
+            <a href="#contacto" class="btn btn-primary hover-target pkg-cta">Consultar Fecha</a>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="pkg-card hover-target gs-fade-up">
+          <div class="pkg-img">
+            <img src="img/img2.png" alt="Esencial">
+          </div>
+          <div class="pkg-content">
+            <h3 class="pkg-name">Paquete 3</h3>
+            <div class="pkg-price">$35 MXN <span style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/ por persona</span></div>
+            <ul class="pkg-list">
+              <li>Fuente de chocolate con brochetas (uva, fresa, bombón)</li>
+              <li>Botanas surtidas (cacahuates, habas, etc.)</li>
+              <li>Palomitas y frituras</li>
+              <li>Gran variedad de dulces</li>
+            </ul>
+            <a href="#contacto" class="btn btn-primary hover-target pkg-cta">Consultar Fecha</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA GSAP PARALLAX -->
+  <section id="galeria">
+    <div class="section-inner">
+      <span class="watermark">04</span>
+      <div class="ornament-line gs-fade-up"></div>
+      <h2 class="section-title gs-fade-up">Obra en Exhibición</h2>
+      <p class="section-sub gs-fade-up">Navega por nuestro portafolio de memorias forjadas.</p>
+
+      <div class="gallery-grid">
+        <div class="gal-item tall hover-target gs-gal-item">
+          <img class="gs-parallax-gal" src="img/img7.png" alt="Pastel y detalles">
+          <div class="gal-overlay"><span class="gal-label">Alta Repostería</span></div>
+        </div>
+        <div class="gal-item hover-target gs-gal-item">
+          <img class="gs-parallax-gal" src="img/img6.png" alt="Banquete">
+          <div class="gal-overlay"><span class="gal-label">Composiciones</span></div>
+        </div>
+        <div class="gal-item hover-target gs-gal-item">
+          <img class="gs-parallax-gal" src="img/img5.png" alt="Bodas">
+          <div class="gal-overlay"><span class="gal-label">Celebraciones</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO DE ALTA COSTURA (FLOATING LABELS) -->
+  <section id="contacto">
+    <div class="section-inner">
+      <span class="watermark">05</span>
+      <div class="contacto-layout">
+        <!-- Izquierda -->
+        <div class="contacto-info">
+          <h3 class="serif gs-fade-up">Iniciemos el Diálogo</h3>
+          <p class="gs-fade-up">Nuestro estudio atiende cada solicitud con la confidencialidad y rapidez que exige un
+            evento de esta naturaleza.</p>
+
+          <div class="contact-link gs-fade-up" style="flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%;">
+            <span class="contact-label">Líneas de WhatsApp</span>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem; width: 100%; max-width: 300px;">
+              <a href="https://wa.me/525516996751" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp" style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 1699 6751</a>
+              <a href="https://wa.me/525549264829" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp" style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 4926 4829</a>
+              <a href="https://wa.me/525532242845" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp" style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 3224 2845</a>
+            </div>
+          </div>
+
+          <div class="contact-link gs-fade-up" style="flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; margin-top: 1rem;">
+            <span class="contact-label">Redes Sociales</span>
+            <a href="https://www.facebook.com/share/1J563FSbnb/?mibextid=wwXIfr" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; max-width: 300px; width: 100%; letter-spacing: 0.05em;"><i class="fab fa-facebook-f" style="font-size: 1.1rem; margin-right: 5px;"></i> Visitar Facebook</a>
+          </div>
+        </div>
+
+        <!-- Derecha Formulario de Lujo -->
+        <div class="contacto-form">
+          <h3 class="serif gs-fade-up">Solicitud de Reserva</h3>
+          <form id="contact-form" class="gs-fade-up">
+            <div class="form-row">
+              <div class="fl-wrap">
+                <input type="text" id="nombre" class="hover-text-input" placeholder=" " required>
+                <label for="nombre">Nombre Completo</label>
+              </div>
+              <div class="fl-wrap">
+                <input type="tel" id="telefono" class="hover-text-input" placeholder=" " required>
+                <label for="telefono">Número de Contacto</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="fl-wrap">
+                <select id="tipoEvento" class="hover-text-input" required>
+                  <option value="" disabled selected hidden></option> <!-- Hack for floating label state -->
+                  <option value="boda">Nupcial / Boda</option>
+                  <option value="xv">XV Años</option>
+                  <option value="corporativo">Lanzamiento Comercial</option>
+                  <option value="otro">Gala Privada</option>
+                </select>
+                <label for="tipoEvento">Naturaleza del Evento</label>
+              </div>
+              <div class="fl-wrap">
+                <input type="date" id="fecha" class="hover-text-input" required>
+                <label for="fecha" style="top:-1.25rem; font-size:0.75rem; color:var(--accent);">Fecha Requerida</label>
+              </div>
+            </div>
+
+            <div class="fl-wrap" style="margin-top: 1rem;">
+              <textarea id="detalles" class="hover-text-input" placeholder=" "></textarea>
+              <label for="detalles">Visiones y Especificaciones de la Locación</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary hover-target" style="align-self: flex-start;">Asegurar
+              Fecha</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Dulces <span>Momentos</span></div>
+    <div class="footer-tag">Elegancia & Sabor Insuperables</div>
+    <div style="font-size: 0.8rem; color: rgba(251, 250, 248, 0.4); text-transform: uppercase; letter-spacing: 0.1em;">
+      &copy; 2025 Estudio Dulces Momentos. Todos los derechos.
+    </div>
+  </footer>
+
+  <!-- LIBRARIES -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
