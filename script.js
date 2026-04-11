@@ -273,3 +273,64 @@ if (form) {
     }
   });
 }
+
+// ── 9. HERO SPARKLES (PARTICLE SYSTEM) ──
+const canvas = document.getElementById('hero-particles');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const particleCount = 40;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + Math.random() * 100;
+      this.size = Math.random() * 3 + 1;
+      this.speedY = Math.random() * 1.5 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 1;
+      this.opacity = Math.random() * 0.5 + 0.2;
+      this.color = Math.random() > 0.5 ? '#FADADD' : '#E8A0A8'; // Blush or Accent
+    }
+    update() {
+      this.y -= this.speedY;
+      this.x += this.speedX;
+      if (this.y < -10) this.reset();
+    }
+    draw() {
+      ctx.globalAlpha = this.opacity;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      if (Math.random() > 0.5) {
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      } else {
+        ctx.fillRect(this.x, this.y, this.size, this.size);
+      }
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}

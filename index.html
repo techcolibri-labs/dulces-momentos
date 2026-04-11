@@ -20,7 +20,7 @@
 
   <!-- PANTALLA DE CARGA -->
   <div class="loader-wrapper" id="loader">
-    <div class="loader-brand">Dulces <span>Momentos</span></div>
+    <div class="loader-brand">Dulces<span>Momentos</span></div>
     <div class="loader-line-wrap">
       <div class="loader-line"></div>
     </div>
@@ -29,14 +29,14 @@
   <!-- NAV -->
   <nav id="navbar">
     <a href="#" class="nav-logo hover-target">
-      Dulces<span>Momentos</span>
+      Dulces<span> Momentos</span>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#nosotros" class="hover-target">Filosofía</a></li>
       <li><a href="#experiencia" class="hover-target">La Magia</a></li>
       <li><a href="#paquetes" class="hover-target">Selección</a></li>
       <li><a href="#galeria" class="hover-target">Galería</a></li>
-      <li><a href="#contacto" class="btn btn-secondary hover-target">Agendar Asesoría</a></li>
+      <li><a href="#contacto" class="btn btn-secondary hover-target">Agendar</a></li>
     </ul>
     <!-- Hamburger for mobile -->
     <div class="nav-burger hover-target" onclick="toggleNav()" style="z-index: 1100;">
@@ -49,10 +49,14 @@
   <!-- HERO (FULL SCREEN CINEMATIC) -->
   <section id="inicio" class="hero gs-reveal">
     <div class="hero-video-wrap">
-      <!-- Se utiliza una imagen ultra fina parallax en lugar de video estricto para asegurar fluidez y elegancia perfecta -->
-      <img src="img/img5.png" class="parallax-hero" alt="Evento Premium">
+      <!-- Se utiliza una imagen ultra fina con animación Ken Burns para un efecto cinematográfico -->
+      <img src="img/img5.png" class="ken-burns" alt="Evento Premium">
       <div class="hero-overlay"></div>
     </div>
+
+    <!-- Canvas para Chispas/Confeti Rosa -->
+    <canvas id="hero-particles"
+      style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index: 1;"></canvas>
 
     <div class="hero-content">
       <div class="hero-badge"><span class="gs-title-word">Alta</span> <span class="gs-title-word">Repostería</span>
@@ -82,20 +86,19 @@
           <img class="gs-parallax-img" src="img/img1.png" alt="Detalle de Macarons">
         </div>
         <div class="about-content">
-          <h2 class="section-title gs-fade-up" style="text-align: left; margin-bottom: 2rem;">Acerca de Nuestro Arte
+          <h2 class="section-title gs-fade-up" style="text-align: left; margin-bottom: 2rem;">Nuestra Filosofía
           </h2>
           <p class="gs-fade-up">
-            Más que una barra de postres, concebimos obras de arte comestibles. Nuestro acercamiento
-            combina la estética minimalista europea con la riqueza de sabores que dictan las nuevas
-            tendencias gastronómicas.
+            Creemos que la mesa de dulces es el corazón de cualquier gran fiesta. Por eso, no solo acomodamos postres;
+            armamos rincones llenos de encanto que hacen sonreír a tus invitados desde el primer vistazo.
           </p>
           <p class="gs-fade-up">
-            Cada evento es tratado como una pasarela única, un lienzo en el que seleccionamos los
-            ingredientes y estructuras más exquisitas para deslumbrar tanto al paladar como a la óptica
-            de tus invitados.
+            Combinamos una decoración de primer nivel con el rico sabor que a todos nos encanta. Cada evento es súper
+            especial para nosotros y lo preparamos con muchísimo cariño, cuidando desde el mínimo detalle visual hasta
+            la frescura de cada dulce.
           </p>
           <div class="gs-fade-up" style="margin-top: 3rem;">
-            <a href="#galeria" class="btn btn-primary hover-target">Explorar Galería</a>
+            <a href="#galeria" class="btn btn-primary hover-target">Ver Nuestro Trabajo</a>
           </div>
         </div>
       </div>
@@ -139,7 +142,9 @@
       <span class="watermark">03</span>
       <div class="ornament-line gs-fade-up"></div>
       <h2 class="section-title gs-fade-up">Nuestra Colección Privada</h2>
-      <p class="section-sub gs-fade-up" style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem; color: var(--accent);">"La delicia en tu fiesta"</p>
+      <p class="section-sub gs-fade-up"
+        style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem; color: var(--accent);">"La delicia
+        en tu fiesta"</p>
 
       <div class="paquetes-grid">
         <!-- CARD 1 -->
@@ -149,7 +154,9 @@
           </div>
           <div class="pkg-content">
             <h3 class="pkg-name">Paquete 1</h3>
-            <div class="pkg-price">$45 MXN <span style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/ por persona</span></div>
+            <div class="pkg-price">$45 MXN <span
+                style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/
+                por persona</span></div>
             <ul class="pkg-list">
               <li>Gelatina con crema</li>
               <li>Arroz con leche y Manzanas con crema</li>
@@ -170,7 +177,9 @@
           </div>
           <div class="pkg-content">
             <h3 class="pkg-name">Paquete 2</h3>
-            <div class="pkg-price">$40 MXN <span style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/ por persona</span></div>
+            <div class="pkg-price">$40 MXN <span
+                style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/
+                por persona</span></div>
             <ul class="pkg-list">
               <li>Fuente de chocolate con brochetas (uva, fresa, bombón)</li>
               <li>Botanas surtidas (cacahuates, habas, hot nut, etc.)</li>
@@ -189,7 +198,9 @@
           </div>
           <div class="pkg-content">
             <h3 class="pkg-name">Paquete 3</h3>
-            <div class="pkg-price">$35 MXN <span style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/ por persona</span></div>
+            <div class="pkg-price">$35 MXN <span
+                style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-soft); font-style: normal;">/
+                por persona</span></div>
             <ul class="pkg-list">
               <li>Fuente de chocolate con brochetas (uva, fresa, bombón)</li>
               <li>Botanas surtidas (cacahuates, habas, etc.)</li>
@@ -235,22 +246,33 @@
       <div class="contacto-layout">
         <!-- Izquierda -->
         <div class="contacto-info">
-          <h3 class="serif gs-fade-up">Iniciemos el Diálogo</h3>
-          <p class="gs-fade-up">Nuestro estudio atiende cada solicitud con la confidencialidad y rapidez que exige un
-            evento de esta naturaleza.</p>
+          <h3 class="serif gs-fade-up">Agenda tu Fecha</h3>
+          <p class="gs-fade-up">Escríbenos para compartirnos los detalles de tu fiesta. Nos encantará ser parte de tu
+            día especial y armarte un montaje hermoso y a tu medida.</p>
 
-          <div class="contact-link gs-fade-up" style="flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%;">
+          <div class="contact-link gs-fade-up"
+            style="flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%;">
             <span class="contact-label">Líneas de WhatsApp</span>
             <div style="display: flex; flex-direction: column; gap: 0.8rem; width: 100%; max-width: 300px;">
-              <a href="https://wa.me/525516996751" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp" style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 1699 6751</a>
-              <a href="https://wa.me/525549264829" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp" style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 4926 4829</a>
-              <a href="https://wa.me/525532242845" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp" style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 3224 2845</a>
+              <a href="https://wa.me/525516996751" target="_blank" class="btn btn-primary hover-target"
+                style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp"
+                  style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 1699 6751</a>
+              <a href="https://wa.me/525549264829" target="_blank" class="btn btn-primary hover-target"
+                style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp"
+                  style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 4926 4829</a>
+              <a href="https://wa.me/525532242845" target="_blank" class="btn btn-primary hover-target"
+                style="padding: 0.8rem; font-size: 0.9rem; letter-spacing: 0.05em;"><i class="fab fa-whatsapp"
+                  style="font-size: 1.1rem; margin-right: 5px;"></i> WhatsApp: 3224 2845</a>
             </div>
           </div>
 
-          <div class="contact-link gs-fade-up" style="flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; margin-top: 1rem;">
+          <div class="contact-link gs-fade-up"
+            style="flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; margin-top: 1rem;">
             <span class="contact-label">Redes Sociales</span>
-            <a href="https://www.facebook.com/share/1J563FSbnb/?mibextid=wwXIfr" target="_blank" class="btn btn-primary hover-target" style="padding: 0.8rem; font-size: 0.9rem; max-width: 300px; width: 100%; letter-spacing: 0.05em;"><i class="fab fa-facebook-f" style="font-size: 1.1rem; margin-right: 5px;"></i> Visitar Facebook</a>
+            <a href="https://www.facebook.com/share/1J563FSbnb/?mibextid=wwXIfr" target="_blank"
+              class="btn btn-primary hover-target"
+              style="padding: 0.8rem; font-size: 0.9rem; max-width: 300px; width: 100%; letter-spacing: 0.05em;"><i
+                class="fab fa-facebook-f" style="font-size: 1.1rem; margin-right: 5px;"></i> Visitar Facebook</a>
           </div>
         </div>
 
@@ -291,7 +313,7 @@
 
             <div class="fl-wrap" style="margin-top: 1rem;">
               <textarea id="detalles" class="hover-text-input" placeholder=" "></textarea>
-              <label for="detalles">Visiones y Especificaciones de la Locación</label>
+              <label for="detalles">Cuéntanos sobre el lugar y la idea que tienes</label>
             </div>
 
             <button type="submit" class="btn btn-primary hover-target" style="align-self: flex-start;">Asegurar
