@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techcolibri-labs.github.io/dulces-momentos/sitemap.xml
