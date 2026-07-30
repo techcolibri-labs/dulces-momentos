@@ -26,21 +26,25 @@ gsap.ticker.lagSmoothing(0, 0);
 
 
 // ── 2. LOADER ELEGANTE ──
-window.addEventListener('load', () => {
+function hideLoader() {
   const loader = document.getElementById('loader');
-  if (loader) {
-    // Retraso intencional para experiencia cinemática
+  if (loader && !loader.classList.contains('fade-out')) {
+    loader.classList.add('fade-out');
     setTimeout(() => {
-      loader.classList.add('fade-out');
-      setTimeout(() => {
-        loader.style.display = 'none';
-        initHeroAnimations();
-      }, 800);
+      loader.style.display = 'none';
+      initHeroAnimations();
     }, 800);
-  } else {
+  } else if (!loader) {
     initHeroAnimations();
   }
+}
+
+window.addEventListener('load', () => {
+  setTimeout(hideLoader, 800);
 });
+
+// Fallback de seguridad: si tarda mucho en cargar (ej. en celular con red lenta), forzamos quitar el loader.
+setTimeout(hideLoader, 3500);
 
 
 // ── 3. CURSOR MAGNÉTICO ──

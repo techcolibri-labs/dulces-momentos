@@ -416,6 +416,7 @@ footer { background: var(--charcoal); color: var(--cream); text-align: center; p
 @media (max-width: 768px) {
   body, a, button, input, select, textarea, .step-card, .pkg-card, .gal-item { cursor: auto !important; }
   .custom-cursor { display: none !important; }
+  .noise-overlay { display: none !important; }
   .hero h1 { font-size: 3rem; }
   .paquetes-grid, .gallery-grid { grid-template-columns: 1fr; }
   .gal-item.tall { grid-row: span 1; height: auto; }
